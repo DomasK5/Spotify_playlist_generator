@@ -14,8 +14,8 @@ class SpotifyAuth:
     """Class for handling Spotify authentication and token management"""
 
     def __init__(self):
-        self.client_id = secret1.CLIENT_ID
-        self.client_secret = secret1.CLIENT_SECRET
+        self.__client_id = ""
+        self.__client_secret = ""
         self.redirect_uri = secret1.REDIRECT_URI
         self.token = None
         self.refresh_token = None
@@ -24,6 +24,24 @@ class SpotifyAuth:
         self.access_token = None
         self.auth_completed = False
         self.auth_event = threading.Event()
+        self.client_id = secret1.CLIENT_ID
+        self.client_secret = secret1.CLIENT_SECRET
+
+    @property
+    def client_id(self):
+        return self.__client_id
+    
+    @client_id.setter
+    def client_id(self, value):
+        self.__client_id = value
+
+    @property
+    def client_secret(self):
+        return self.__client_secret
+    
+    @client_secret.setter
+    def client_secret(self, value):
+        self.__client_secret = value
 
     def get_token(self):
         """Obtain a Spotify API token using client credentials flow"""
