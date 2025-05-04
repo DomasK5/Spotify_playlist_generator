@@ -1,0 +1,28 @@
+# Sensitive data
+secret1.py
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
+.venv
+env/
+venv/
+ENV/
+dist/
+build/
+*.egg-info/
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# Operating System
+.DS_Store
+Thumbs.db
+*.swp
